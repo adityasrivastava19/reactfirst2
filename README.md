@@ -1,16 +1,122 @@
-# React + Vite
+# 📱 React Social Feed App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beginner-friendly React learning project built with **Vite** that demonstrates core React concepts through a simple social media post feed.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tech Stack
 
-## React Compiler
+| Technology | Version |
+|---|---|
+| React | ^19.2.4 |
+| Vite | ^8.0.4 |
+| ESLint | ^9.39.4 |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Reusable `Post` Component** — Displays user posts with profile image, name, follower count, timestamp, and content.
+- **Conditional Rendering** — Timestamps are only shown when provided.
+- **Inline & Object Styles** — Demonstrates both React styling approaches.
+- **Component Composition** — Multiple `Post` instances built from a single reusable component.
+
+---
+
+## 📁 Project Structure
+
+```
+fisrtlearning/
+├── public/             # Static assets
+├── src/
+│   ├── App.jsx         # Main app with Post component
+│   ├── App.css         # Component styles
+│   ├── index.css       # Global styles
+│   └── main.jsx        # React entry point
+├── index.html          # HTML entry point
+├── vite.config.js      # Vite configuration
+├── eslint.config.js    # ESLint configuration
+└── package.json        # Project dependencies & scripts
+```
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+Make sure you have **Node.js** (v18+) and **npm** installed.
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd fisrtlearning
+
+# Install dependencies
+npm install
+```
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Other Scripts
+
+```bash
+npm run build    # Build for production
+npm run preview  # Preview the production build
+npm run lint     # Run ESLint
+```
+
+---
+
+## 🧩 Component Overview
+
+### `Post`
+
+A reusable component that renders a single social media post card.
+
+**Props:**
+
+| Prop | Type | Required | Description |
+|---|---|---|---|
+| `name` | `string` | ✅ | Display name of the user |
+| `folwers` | `string` | ✅ | Follower count (displayed as-is) |
+| `time` | `string` | ❌ | Time since post (e.g. `"12 m"`, `"1 h"`) |
+| `content` | `string` | ❌ | Post body text |
+| `image` | `JSX.Element` | ❌ | Profile image element (`<img />`) |
+
+**Example usage:**
+
+```jsx
+<Post
+  image={<img src="avatar.jpg" alt="user" />}
+  name="John Doe"
+  folwers="1,000,000"
+  time="12 m"
+  content="Hello from React!"
+/>
+```
+
+---
+
+## 📚 What I Learned
+
+- Creating and exporting functional React components
+- Passing and using **props** (including optional ones)
+- Conditional rendering with the ternary operator
+- Applying **inline styles** and style objects in JSX
+- Embedding JSX elements as prop values
+- Setting up a React project with **Vite**
+
+---
+
+## 📄 License
+
+This project is for personal learning purposes.

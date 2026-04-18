@@ -1,14 +1,15 @@
 import { useState } from "react";
 function Toggle(){
-    const [isvisible,setvisible]=useState(false);
+    const [isvisible,setvisible]=useState(0);
     const toggled=()=>
     {
-        setvisible(!isvisible);
+        setvisible(isvisible+1);
+        console.log("behenchod");
     }
     return (
     <div>
         <button onClick={toggled}>toggle</button>
-        {isvisible&& <b>hello world</b>}
+        {isvisible}
     </div>
     )
 }
